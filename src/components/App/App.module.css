@@ -1,0 +1,9 @@
+.appContainer {
+  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.appTitle {
+  margin-bottom: 30px;
+}
