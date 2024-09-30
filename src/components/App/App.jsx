@@ -1,9 +1,7 @@
-// import ContactForm from '../ContactForm/ContactForm';
-// import SearchBox from '../SearchBox/SearchBox';
-// import ContactList from '../ContactList/ContactList';
+
 import Layout from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-// import { selectLoading, selectError } from '../../redux/contacts/selectors';
+
 import css from './App.module.css';
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -15,6 +13,9 @@ import PrivateRoute from './PrivateRoute';
 const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() =>
   import('../../pages/RegisterPage/RegisterPage')
+);
+const ContactsPage = lazy(() =>
+  import('../../pages/ContactsPage/ContactsPage')
 );
 
 export default function App() {
@@ -31,11 +32,6 @@ export default function App() {
     <Layout>
       <Suspense fallback={null}>
         <div className={css.appContainer}>
-          {/* <h1 className={css.appTitle}>Phonebook</h1>
-          <ContactForm />
-          <SearchBox />
-          {loading && !error && <b>Request in progress...</b>}
-          <ContactList /> */}
 
           <Routes>
             <Route
@@ -53,6 +49,15 @@ export default function App() {
                 />
               }
             />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  component={<ContactsPage />}
+                  redirectTo="/login"
+                />
+              }
+            ></Route>
           </Routes>
         </div>
       </Suspense>

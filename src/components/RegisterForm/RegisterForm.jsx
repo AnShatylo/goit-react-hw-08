@@ -19,11 +19,9 @@ export default function RegisterForm() {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .min(3, 'Too short, min 3 letters!')
-      .max(50, 'Too long, max 50 letters!')
       .required('Name is required'),
     email: Yup.string()
       .min(3, 'Too short, min 3 letters!')
-      .max(15, 'Too long, max 50 letters!')
       .required('Number is required'),
     password: Yup.string()
       .min(6, 'Too shott, min 6 symbols')
@@ -44,7 +42,7 @@ export default function RegisterForm() {
           <ErrorMessage name="name" component="span" className={css.error} />
         </div>
         <div className={css.formGroup}>
-          <label>Number</label>
+          <label>Email</label>
 
           <Field type="email" className={css.input} name="email" />
           <ErrorMessage name="email" component="span" className={css.error} />
