@@ -4,6 +4,7 @@ import {
   addContact,
   deleteContact,
 } from '../contacts/operations';
+import { logOut } from '../auth/operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -46,7 +47,12 @@ const slice = createSlice({
         );
         state.items.splice(index, 1);
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(logOut.fulfilled, state => {
+        state.items = [];
+        state.loading = false;
+        state.error = null;
+      });
   },
 });
 

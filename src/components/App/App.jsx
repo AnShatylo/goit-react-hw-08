@@ -1,4 +1,3 @@
-
 import Layout from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,6 +17,8 @@ const ContactsPage = lazy(() =>
   import('../../pages/ContactsPage/ContactsPage')
 );
 
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+
 export default function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -32,8 +33,9 @@ export default function App() {
     <Layout>
       <Suspense fallback={null}>
         <div className={css.appContainer}>
-
           <Routes>
+            <Route path="/" element={<HomePage />} />
+
             <Route
               path="/register"
               element={
