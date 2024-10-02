@@ -1,11 +1,17 @@
 .contactItemWrapper {
-  padding: 10px;
-  border: 1px solid #000;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 0 5px var(--middle-blue);
+  border-radius: 10px;
+  min-width: 300px;
+  width: 40%;
+  margin-bottom: 30px;
+  background-color: var(--white-color);
 }
 
 .contactElem {

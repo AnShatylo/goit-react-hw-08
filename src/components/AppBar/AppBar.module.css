@@ -1,0 +1,7 @@
+.appBar {
+  padding: 10px 20px;
+  background-color: var(--dark-blue);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,10 +1,9 @@
 import Layout from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { refreshUser } from '../../redux/auth/operations';
 import css from './App.module.css';
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { fetchContacts } from '../../redux/contacts/operations';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import RestrictedRoute from './RestrictedRoute';
 import PrivateRoute from './PrivateRoute';
@@ -24,7 +23,7 @@ export default function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return isRefreshing ? (

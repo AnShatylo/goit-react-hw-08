@@ -1,0 +1,16 @@
+.userMenuWrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.userMenuWrap p {
+    color: var(--white-color);
+    font-size: 14px;
+  }
+
+
+.link:hover, .link:focus {
+    color: var(--medium-blue);
+}

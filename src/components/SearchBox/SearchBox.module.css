@@ -3,7 +3,21 @@
 }
 
 .input {
-  max-width: 300px;
-  width: 300px;
-  padding: 5px 10px;
+  width: 40%;
+  padding: 10px 15px;
+  background-color: #ffffff81;
+  box-shadow: inset 0 0 5px #ced6ed;
+  border: none;
+  transition: all 250ms linear;
 }
+
+.searchBox p {
+  color: var(--dark-blue);
+  margin-left: 10px;
+}
+
+.input:focus-visible {
+  box-shadow: inset 0 0 5px #fff;
+  outline: none;
+}
+

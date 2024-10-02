@@ -1,0 +1,14 @@
+.authNav {
+    display: flex;
+    gap: 10px;
+}
+
+.link {
+    color: var(--white-color);
+    transition: all 250ms linear;
+  }
+
+
+.link:hover, .link:focus {
+    color: var(--medium-blue);
+}

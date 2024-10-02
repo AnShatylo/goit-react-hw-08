@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.link {
+    color: var(--white-color);
+    transition: all 250ms linear;
+  }
+
+
+.link:hover, .link:focus {
+    color: var(--medium-blue);
+}
